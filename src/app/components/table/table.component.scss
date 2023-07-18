@@ -1,0 +1,97 @@
+/* Estilos para el contenedor de la tabla */
+.custom-table-container {
+  margin: 20px auto;
+  width: 80%;
+}
+
+/* Estilos para la tabla */
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.custom-table th {
+  background-color: #f0f0f0;
+  text-align: center; /* Alineamos el contenido del header al centro */
+  font-size: 26px;
+  font-weight: bold;
+  padding: 24px 0px;
+}
+
+/* Estilos para los botones de acciones */
+.action-button {
+  background-color: transparent;
+  border: none;
+  height: max-content;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 5px;
+  padding: 5px;
+  transition: background-color 0.3s;
+}
+
+.action-button.edit-button {
+  color: #5c4fd8; /* Azul */
+}
+
+.action-button.delete-button {
+  color: #5c4fd8; /* Rojo */
+}
+
+.action-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilos para los iconos de botones */
+.fa-pencil-alt::before {
+  content: "\f303"; /* Código Unicode para el icono del lápiz */
+  border-bottom: #5c4fd8 1px solid;
+  font-size: 22px;
+}
+
+.fa-trash-alt::before {
+  content: "\f1f8"; /* Código Unicode para el icono del bote de basura */
+  font-size: 22px;
+}
+
+.fa-trash-alt::after {
+  content: "x";
+  position: relative;
+  margin-left: -14px;
+  transform: translate(-50%, -50%) rotate(45deg); /* Rota el contenido en 45 grados */
+  font-size: 12px;
+  font-weight: bold;
+  color: white; /* Color rojo para la "x" */
+}
+
+/* Estilos para centrar el contenido de la columna de acciones */
+.custom-table .action-cell {
+  text-align: center;
+}
+
+/* Estilos para alinear el contenido de las otras columnas a la izquierda */
+.custom-table td:not(.action-cell) {
+  text-align: left;
+  font-size: 22px;
+  font-weight:500;
+  padding-left: 20px;
+}
+
+/* Estilos para quitar bordes a las imágenes */
+.custom-table td img {
+  border: none;
+  max-height: 65px;
+}
+
+td{
+  vertical-align: middle;
+  height: max-content;
+}

@@ -1,0 +1,12 @@
+<div class="header">
+  <h2>Listado de Pockemon</h2>
+  <form type="submit" [formGroup]="searchForm" class="form-search">
+    <app-input>
+      <i class="fas fa-search"></i>
+      <input type="text" formControlName="searchInputControl" placeholder="Buscar">
+    </app-input>
+    <app-btn [textButton]="'Nuevo'" [icon]="'fas fa-plus'" (click)="toogle()"></app-btn>
+  </form>
+  <br><br>
+  <app-table></app-table>
+</div>

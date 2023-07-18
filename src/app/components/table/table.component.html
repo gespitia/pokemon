@@ -1,0 +1,27 @@
+<table class="custom-table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Imagen</th>
+      <th>Ataque</th>
+      <th>Defensa</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pokemon of pokemons">
+      <td>{{ pokemon.nombre }}</td>
+      <td class="action-cell"><img [src]="pokemon.imagen" alt="Imagen de {{ pokemon.nombre }}"></td>
+      <td>{{ pokemon.ataque }}</td>
+      <td>{{ pokemon.defensa }}</td>
+      <td class="action-cell">
+        <button class="action-button edit-button">
+          <i class="fas fa-pencil-alt"></i>
+        </button>
+        <button class="action-button delete-button">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
