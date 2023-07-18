@@ -11,8 +11,6 @@ export class AppComponent {
   //Add 'implements OnInit' to the class.
   title = 'pokemon'
 
-  public onCreate(): EventListener{
 
-  }
 
 }
