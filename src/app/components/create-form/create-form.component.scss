@@ -1,23 +1,30 @@
 .container-create-form{
   margin: auto;
-  padding: 60px;
   border: 1px solid #ccc;
-  width: 73.5%;
   text-align: center;
+  width: 100%;
 }
 .create-form{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 35rem), 1fr));
-  gap: 100px;
+  display: flex;
+  justify-content: space-around;
   .block{
+    min-width: 45%;
+    text-align: center;
+    padding: 10px;
     .container-field{
       display: flex;
-      flex-direction: row;
       justify-content: space-between;
     }
   }
 }
 
-.create-form:first-child{
-  padding-right: 70px;
+@media (max-width:800px) {
+  .create-form{
+    display: block;
+    width: 100%;
+    .block{
+      justify-content: center;
+      padding: 20px;
+    }
+  }
 }

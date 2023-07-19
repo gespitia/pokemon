@@ -1,3 +1,6 @@
-<app-search-form></app-search-form>
-<app-create-form></app-create-form>
+<div class="container">
+  <app-search-form (create)="recive($event)"></app-search-form>
+  <br><br>
+  <app-create-form *ngIf="visible"></app-create-form>
+</div>
 <router-outlet></router-outlet>

@@ -1,6 +1,6 @@
 <div class="container-create-form">
   <h2>Nuevo Pokemon</h2>
-  <br><br>
+  <br /><br />
   <form [formGroup]="createForm" class="create-form">
     <div class="block">
       <div class="container-field">
@@ -9,7 +9,7 @@
           <input type="text" formControlName="nombre" />
         </app-input>
       </div>
-      <br><br>
+      <br /><br />
       <div class="container-field">
         <h2>Imagen:</h2>
         <app-input>
@@ -19,12 +19,14 @@
     </div>
     <div class="block">
       <app-slider [field]="'Ataque'"></app-slider>
-      <br><br>
+      <br /><br />
       <app-slider [field]="'Defensa'"></app-slider>
     </div>
   </form>
-  <br><br><br>
-  <app-btn [textButton]="'Guardar'" [icon]="'fas fa-save'"></app-btn>
-  <app-btn [textButton]="'Cancelar'" [icon]="'fas fa-times'"></app-btn>
+  <br /><br /><br />
+  <p class="container-button">
+    <app-btn [textButton]="'Guardar'" [icon]="'fas fa-save'"></app-btn>
+    <app-btn [textButton]="'Cancelar'" [icon]="'fas fa-times'"></app-btn>
+  </p>
 </div>
-<br><br>
+<br /><br />

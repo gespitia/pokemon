@@ -8,9 +8,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class SearchFormComponent {
 
-  visible:Boolean=false;
-
-  @Output() create: EventEmitter<any> = new EventEmitter();
+  @Output() create: EventEmitter<Boolean> = new EventEmitter();
 
   searchForm = this.fb.group({
     searchInputControl:['', Validators.required]
@@ -19,7 +17,6 @@ export class SearchFormComponent {
   constructor(private fb: FormBuilder){}
 
   toggle() {
-    this.visible = !this.visible;
-    this.create.emit(this.visible);
+    this.create.emit(true);
   }
 }
