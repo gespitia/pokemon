@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import { InputComonent } from './components/input/input.component';
 import { BtnComponent } from './components/btn/btn.component';
 import { TableComponent } from './components/table/table.component';
-import { SliderComponent } from './components/slider/slider.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { CreateFormComponent } from './components/create-form/create-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ControlValueAccessorDirective } from './directives/control-value-accessor.directive';
+import { SliderCompnent } from './components/slider/slider.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,15 +19,17 @@ import { CreateFormComponent } from './components/create-form/create-form.compon
     BtnComponent,
     TableComponent,
     SearchFormComponent,
-    SliderComponent,
     CreateFormComponent,
+    ControlValueAccessorDirective,
+    SliderCompnent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

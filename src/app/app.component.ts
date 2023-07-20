@@ -1,5 +1,4 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +15,7 @@ export class AppComponent {
 
   recive($even:any){
     console.log($even)
-    this.visible=true;
+    this.visible=$even;
     this.cd.detectChanges()
   }
 

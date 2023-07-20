@@ -1,6 +1,6 @@
 <div class="container">
   <app-search-form (create)="recive($event)"></app-search-form>
   <br><br>
-  <app-create-form *ngIf="visible"></app-create-form>
+  <app-create-form (create)="recive($event)" *ngIf="visible"></app-create-form>
 </div>
 <router-outlet></router-outlet>

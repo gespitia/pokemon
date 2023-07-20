@@ -18,15 +18,15 @@
       </div>
     </div>
     <div class="block">
-      <app-slider [field]="'Ataque'"></app-slider>
+      <app-slider [field]="'Ataque'" formControlName="ataque"></app-slider>
       <br /><br />
-      <app-slider [field]="'Defensa'"></app-slider>
+      <app-slider [field]="'Defensa'" formControlName="defensa"></app-slider>
     </div>
   </form>
   <br /><br /><br />
   <p class="container-button">
-    <app-btn [textButton]="'Guardar'" [icon]="'fas fa-save'"></app-btn>
-    <app-btn [textButton]="'Cancelar'" [icon]="'fas fa-times'"></app-btn>
+    <app-btn [textButton]="'Guardar'" [disabled]="true" (click)="createPokemon()" [icon]="'fas fa-save'"></app-btn>
+    <app-btn [textButton]="'Cancelar'" (click)="toggle()" [icon]="'fas fa-times'"></app-btn>
   </p>
 </div>
-<br /><br />
+<br/><br/>

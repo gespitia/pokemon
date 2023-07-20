@@ -1,4 +1,4 @@
-/* Estilos base del botón */
+/* Estilos para el botón en estado normal */
 .btn {
   padding: 14px 16px;
   background-color: #333;
@@ -24,4 +24,11 @@
 /* Estilos para el estado "hover" */
 .btn:hover {
   background-color: #555;
+}
+
+/* Estilos para el estado "disabled" */
+.btn:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+  opacity: 0.6; /* Puedes ajustar la opacidad según tus preferencias */
 }

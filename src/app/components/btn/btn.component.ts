@@ -9,4 +9,5 @@ export class BtnComponent {
   @Input() buttonClass = "btn-primary";
   @Input() textButton = "btn";
   @Input() icon = 'fas fas-plus';
+  @Input() disabled = false;
 }
