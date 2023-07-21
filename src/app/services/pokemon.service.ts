@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Pokemon } from '../models/pokemon.models';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
+
+  filterNombre$:BehaviorSubject<string> = new BehaviorSubject("");
 
   urlBase= 'http://localhost:3000/pokemons';
 
@@ -13,7 +16,9 @@ export class PokemonService {
 
   //Obtener pokemons
   getPokemon(){
-    return this.httpClient.get(this.urlBase)
+    const params = new HttpParams()
+      .set('nombre_like', this.filterNombre$.value)
+    return this.httpClient.get(this.urlBase, {params})
   }
 
   createPokemon(body: Pokemon){
@@ -30,6 +35,10 @@ export class PokemonService {
 
   updatePokemonById(id:string, body:Pokemon){
     return this.httpClient.put(this.urlBase + '/' + id, body);
+  }
+
+  setFilterName(nombre:string){
+    this.filterNombre$.next(nombre);
   }
 
 }

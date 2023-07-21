@@ -1,16 +1,18 @@
-import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Pokemon } from '../../models/pokemon.models';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { SnackbarComponent } from '../snackbar/snackbar.component';
 import { ModalService } from 'src/app/services/modal.service';
 import { EditPokemonService } from 'src/app/services/edit-pokemon.service';
+import { CreateFormComponent } from '../create-form/create-form.component';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })
-export class TableComponent implements OnInit{
+export class TableComponent implements OnInit, AfterViewInit{
 
+  @Input() createForm!:CreateFormComponent;
   @ViewChild('snackbar') snackbar!: SnackbarComponent;
 
   infoModal!:any;
@@ -24,7 +26,16 @@ export class TableComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.listarPokemon()
+    this.pokemonService.filterNombre$.subscribe(data=>{
+      this.listarPokemon()
+    })
+    this.createForm?.create.subscribe(data=>{
+      this.listarPokemon()
+    })
+    // this.listarPokemon()
+  }
+
+  ngAfterViewInit(): void {
   }
 
   listarPokemon(){
@@ -44,6 +55,7 @@ export class TableComponent implements OnInit{
 
   recive($even:any){
     this.closeModal()
+    this.listarPokemon()
     this.cd.detectChanges()
   }
 
