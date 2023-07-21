@@ -42,6 +42,10 @@ export class TableComponent implements OnInit{
     this.cd.detectChanges();
   }
 
+  recive($even:any){
+    this.closeModal()
+    this.cd.detectChanges()
+  }
 
  showSnackbar() {
     this.snackbar.show();

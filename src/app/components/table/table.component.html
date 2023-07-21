@@ -27,7 +27,7 @@
     </tbody>
   </table>
   <app-modal>
-    <app-create-form [title]="'Editar Pokemon'" ></app-create-form>
+    <app-create-form [title]="'Editar Pokemon'" (create)="recive($event)"></app-create-form>
   </app-modal>
   <app-snackbar [message]="message" #snackbar></app-snackbar>
 </div>
