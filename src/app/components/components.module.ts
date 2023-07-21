@@ -6,6 +6,7 @@ import { TableComponent } from './table/table.component';
 import { SliderComponent } from './slider/slider.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { CreateFormComponent } from './create-form/create-form.component';
+import { SnackbarComponent } from './snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CreateFormComponent } from './create-form/create-form.component';
     SliderComponent,
     SearchFormComponent,
     CreateFormComponent,
+    SnackbarComponent,
   ],
   imports: [
     CommonModule
@@ -26,6 +28,7 @@ import { CreateFormComponent } from './create-form/create-form.component';
     SearchFormComponent,
     SliderComponent,
     CreateFormComponent,
+    SnackbarComponent,
   ]
 })
 export class ComponentsModule { }

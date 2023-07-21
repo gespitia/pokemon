@@ -12,6 +12,7 @@ import { CreateFormComponent } from './components/create-form/create-form.compon
 import { HttpClientModule } from '@angular/common/http';
 import { ControlValueAccessorDirective } from './directives/control-value-accessor.directive';
 import { SliderCompnent } from './components/slider/slider.component';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { SliderCompnent } from './components/slider/slider.component';
     SearchFormComponent,
     CreateFormComponent,
     ControlValueAccessorDirective,
-    SliderCompnent
+    SliderCompnent,
+    SnackbarComponent,
   ],
   imports: [
     BrowserModule,

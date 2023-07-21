@@ -20,4 +20,8 @@ export class PokemonService {
     return this.httpClient.post(this.urlBase, body)
   }
 
+  deletePokemon(id:string){
+    return this.httpClient.delete(this.urlBase + '/' + id);
+  }
+
 }

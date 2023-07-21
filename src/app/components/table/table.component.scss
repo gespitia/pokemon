@@ -1,8 +1,18 @@
 /* Estilos para el contenedor de la tabla */
 .custom-table-container {
   margin: 20px auto;
-  max-height: 150px; /* Ajusta la altura máxima del contenedor según el número de filas visibles que desees mostrar */
-  overflow-y: auto; /* Habilita el scroll vertical cuando los registros excedan la altura máxima */
+  max-height: 330px; /* Ajusta la altura máxima del contenedor según el número de filas visibles que desees mostrar */
+  overflow-y: scroll; /* Habilita el scroll vertical cuando los registros excedan la altura máxima */
+  /* Ocultar la barra de desplazamiento vertical */
+  scrollbar-width: none; /* Para navegadores basados en Firefox */
+  -ms-overflow-style: none;
+  border: 1px solid #ccc;/* Habilita el scroll vertical cuando los registros excedan la altura máxima */
+}
+
+/* Estilos adicionales para navegadores basados en WebKit, como Chrome y Safari */
+.custom-table-container::-webkit-scrollbar {
+  width: 0; /* Ancho de la barra de desplazamiento vertical */
+  height: 0; /* Altura de la barra de desplazamiento horizontal */
 }
 
 /* Estilos para la tabla */

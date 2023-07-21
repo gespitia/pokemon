@@ -1,7 +1,7 @@
 export interface Pokemon {
-  id: String;
-  nombre: String;
-  imagen: String;
-  ataque: Number;
-  defensa: Number;
+  id: string;
+  nombre: string;
+  imagen: string;
+  ataque: number;
+  defensa: number;
 }

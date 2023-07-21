@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Pokemon } from 'src/app/models/pokemon.models';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { SnackbarComponent } from '../snackbar/snackbar.component';
 
 @Component({
   selector: 'app-create-form',
@@ -10,12 +11,16 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class CreateFormComponent {
 
+  @ViewChild('snackbar') snackbar!: SnackbarComponent;
+
+  message: string = '¡Este es mi mensaje informativo!';
+
   @Output() create:EventEmitter<Boolean> = new EventEmitter();
 
   pokemon!:Pokemon;
   createForm!:FormGroup;
 
-  constructor(private fb:FormBuilder, private pokemonService:PokemonService){
+  constructor(private fb:FormBuilder, private pokemonService:PokemonService, private cd:ChangeDetectorRef){
     this.createForm = this.fb.group({
       id: '',
       nombre: ['', [Validators.required, Validators.maxLength(50)]],
@@ -29,7 +34,10 @@ export class CreateFormComponent {
     this.pokemon = this.createForm.value as Pokemon;
     console.log(this.pokemon)
     this.pokemonService.createPokemon(this.pokemon).subscribe( res=>console.log(res));
+    this.message = 'Pokemon creado con exito'
+    this.showSnackbar();
     this.toggle();
+    this.cd.detectChanges();
   }
 
   toggle(){
@@ -46,5 +54,9 @@ export class CreateFormComponent {
 
   getDisabled(){
     return this.createForm.invalid
+  }
+
+  showSnackbar() {
+    this.snackbar.show();
   }
 }
