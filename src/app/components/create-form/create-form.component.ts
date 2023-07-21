@@ -36,7 +36,9 @@ export class CreateFormComponent {
     this.pokemonService.createPokemon(this.pokemon).subscribe( res=>console.log(res));
     this.message = 'Pokemon creado con exito'
     this.showSnackbar();
-    this.toggle();
+    setTimeout(()=>{
+      this.toggle();
+    }, 4000)
     this.cd.detectChanges();
   }
 

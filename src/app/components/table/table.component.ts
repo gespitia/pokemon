@@ -31,13 +31,11 @@ export class TableComponent implements OnInit{
 
   deletePokemon(id:string){
     this.pokemonService.deletePokemon(id).subscribe((res)=>console.log(res))
-    this.pokemons.filter((el)=>el.id !== id)
-    this.listarPokemon()
+    this.pokemons=this.pokemons.filter((el)=>el.id !== id)
     this.message = 'Pokemon eliminado con exito'
     this.showSnackbar();
     this.cd.detectChanges();
   }
-
 
 
   showSnackbar() {
