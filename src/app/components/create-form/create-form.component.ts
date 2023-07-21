@@ -19,7 +19,7 @@ export class CreateFormComponent {
     this.createForm = this.fb.group({
       id: '',
       nombre: ['', [Validators.required, Validators.maxLength(50)]],
-      imagen: ['', [Validators.required, Validators.pattern('https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$')]],
+      imagen: ['', [Validators.required, Validators.pattern('^(https?:\\/\\/)?[\\w\\-]+(\\.[\\w\\-]+)+([/?#]\\S*)?$')]],
       ataque: [ 0, [Validators.required, Validators.min(0), Validators.max(100)]],
       defensa: [ 0, [Validators.required, Validators.min(0), Validators.max(100)]],
     })
@@ -29,9 +29,22 @@ export class CreateFormComponent {
     this.pokemon = this.createForm.value as Pokemon;
     console.log(this.pokemon)
     this.pokemonService.createPokemon(this.pokemon).subscribe( res=>console.log(res));
+    this.toggle();
   }
 
   toggle(){
     this.create.emit(false);
+  }
+
+  getValid(control:string){
+    return this.createForm.controls[control].valid && this.createForm.controls[control].touched
+  }
+
+  getInvalid(control:string){
+    return this.createForm.controls[control].invalid && this.createForm.controls[control].touched
+  }
+
+  getDisabled(){
+    return this.createForm.invalid
   }
 }

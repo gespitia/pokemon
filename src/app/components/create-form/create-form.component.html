@@ -5,14 +5,14 @@
     <div class="block">
       <div class="container-field">
         <h2>Nombre:</h2>
-        <app-input>
+        <app-input [valid]="getValid('nombre')" [invalid]="getInvalid('nombre')">
           <input type="text" formControlName="nombre" />
         </app-input>
       </div>
       <br /><br />
       <div class="container-field">
         <h2>Imagen:</h2>
-        <app-input>
+        <app-input [valid]="getValid('imagen')" [invalid]="getInvalid('imagen')">
           <input type="text" formControlName="imagen" />
         </app-input>
       </div>
@@ -25,7 +25,7 @@
   </form>
   <br /><br /><br />
   <p class="container-button">
-    <app-btn [textButton]="'Guardar'" [disabled]="true" (click)="createPokemon()" [icon]="'fas fa-save'"></app-btn>
+    <app-btn [textButton]="'Guardar'" [disabled]="getDisabled()" (click)="createPokemon()" [icon]="'fas fa-save'"></app-btn>
     <app-btn [textButton]="'Cancelar'" (click)="toggle()" [icon]="'fas fa-times'"></app-btn>
   </p>
 </div>

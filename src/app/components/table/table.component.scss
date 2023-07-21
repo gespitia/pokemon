@@ -1,6 +1,8 @@
 /* Estilos para el contenedor de la tabla */
 .custom-table-container {
   margin: 20px auto;
+  max-height: 150px; /* Ajusta la altura máxima del contenedor según el número de filas visibles que desees mostrar */
+  overflow-y: auto; /* Habilita el scroll vertical cuando los registros excedan la altura máxima */
 }
 
 /* Estilos para la tabla */
@@ -22,6 +24,9 @@
   font-size: 26px;
   font-weight: bold;
   padding: 24px 0px;
+  position: sticky; /* Encabezado pegajoso */
+  top: 0; /* Fijar el encabezado en la parte superior */
+  z-index: 1; /* Asegura que el encabezado esté sobre los registros mientras se desplaza */
 }
 
 /* Estilos para los botones de acciones */
@@ -42,7 +47,7 @@
 }
 
 .action-button.delete-button {
-  color: #5c4fd8; /* Rojo */
+  color: #e53935; /* Rojo */
 }
 
 .action-button:hover {
@@ -95,14 +100,15 @@ td {
   height: max-content;
 }
 
+/* Estilos para el media query en dispositivos más pequeños */
 @media (max-width: 800px) {
-  .custom-table th{
+  .custom-table th {
     font-size: 14px !important;
   }
-  td{
+  td {
     font-size: 12px !important;
   }
-  img{
+  img {
     max-height: 40px;
   }
 }
