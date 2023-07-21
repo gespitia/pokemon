@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 #FakeBackend
 El Backend esta simulado con la libreira https://www.npmjs.com/package/json-server 
 
-ejecutar 
+#Ejecutar 
 npm install -g json-server
 
 json-server --watch db.json
