@@ -14,7 +14,4 @@ import { ControlValueAccessorDirective } from 'src/app/directives/control-value-
     },
   ],
 })
-export class SliderCompnent<T> extends ControlValueAccessorDirective<T>{
-
-
-}
+export class SliderCompnent<T> extends ControlValueAccessorDirective<T>{}

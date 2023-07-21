@@ -7,8 +7,6 @@ import { CreateFormComponent } from './components/create-form/create-form.compon
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-  //Add 'implements OnInit' to the class.
   visible = false;
   title = 'pokemon'
 

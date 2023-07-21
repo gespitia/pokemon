@@ -14,20 +14,13 @@ export class CreateFormComponent implements OnInit{
 
   @Input() title='Nuevo Pokemon'
   @Input() id=''
-
   @ViewChild('snackbar') snackbar!: SnackbarComponent;
+  @Output() create:EventEmitter<Boolean> = new EventEmitter();
 
   message: string = '¡Este es mi mensaje informativo!';
 
-  @Output() create:EventEmitter<Boolean> = new EventEmitter();
+  pokemon!:Pokemon;
 
-  pokemon:Pokemon = {
-    id: '',
-    nombre: '',
-    imagen: '',
-    ataque: 0,
-    defensa: 0
-  };
   createForm!:FormGroup;
 
   constructor(private fb:FormBuilder, private pokemonService:PokemonService, private cd:ChangeDetectorRef, private editPokemonService:EditPokemonService){
@@ -38,8 +31,6 @@ export class CreateFormComponent implements OnInit{
       ataque: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
       defensa: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
     })
-    console.log(this.pokemon)
-    console.log(this.createForm)
   }
 
   ngOnInit(): void {
@@ -51,7 +42,6 @@ export class CreateFormComponent implements OnInit{
 
   createPokemon(){
     this.pokemon = this.createForm.value as Pokemon;
-    console.log(this.pokemon)
     if(!this.id){
       this.pokemonService.createPokemon(this.pokemon).subscribe( res=>console.log(res));
       this.message = 'Pokemon creado con exito'
