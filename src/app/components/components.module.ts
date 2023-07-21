@@ -7,6 +7,7 @@ import { SliderComponent } from './slider/slider.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +18,13 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     SearchFormComponent,
     CreateFormComponent,
     SnackbarComponent,
+    ModalComponent,
   ],
   imports: [
     CommonModule
   ],
   exports:[
+    ModalComponent,
     InputComonent,
     BtnComponent,
     TableComponent,
@@ -29,6 +32,6 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     SliderComponent,
     CreateFormComponent,
     SnackbarComponent,
-  ]
+  ],
 })
 export class ComponentsModule { }

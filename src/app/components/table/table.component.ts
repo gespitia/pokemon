@@ -1,7 +1,9 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Pokemon } from '../../models/pokemon.models';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { SnackbarComponent } from '../snackbar/snackbar.component';
+import { ModalService } from 'src/app/services/modal.service';
+import { EditPokemonService } from 'src/app/services/edit-pokemon.service';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -11,11 +13,14 @@ export class TableComponent implements OnInit{
 
   @ViewChild('snackbar') snackbar!: SnackbarComponent;
 
+  infoModal!:any;
+  id!:string;
+
   message: string = '¡Este es mi mensaje informativo!';
 
   pokemons!: Pokemon[];
 
-  constructor(private pokemonService:PokemonService, private cd:ChangeDetectorRef){}
+  constructor(private pokemonService:PokemonService, private modalService: ModalService, private cd:ChangeDetectorRef, private editPokemonService:EditPokemonService){}
 
 
   ngOnInit(): void {
@@ -38,7 +43,23 @@ export class TableComponent implements OnInit{
   }
 
 
-  showSnackbar() {
+ showSnackbar() {
     this.snackbar.show();
   }
+
+  openModal(pokemon: any) {
+    this.editPokemonService.emitEditPokemon(pokemon)
+    this.id = pokemon.id;
+    this.infoModal = pokemon;
+    this.modalService.openModal({
+      title: 'Editar Pokemon',
+      data: pokemon
+    });
+    console.log(pokemon)
+  }
+
+  closeModal() {
+    this.modalService.closeModal();
+  }
+
 }

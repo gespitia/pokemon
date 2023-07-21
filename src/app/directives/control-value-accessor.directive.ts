@@ -54,9 +54,11 @@ export class ControlValueAccessorDirective<T> implements ControlValueAccessor, O
   @Input() field = '';
 
   writeValue(value: T): void {
-    this.control ? this.control.setValue(value) : (this.control = new FormControl(value))
-    // throw new Error('Method not implemented.');
+    if (this.control && this.control.value !== value) {
+      this.control.setValue(value);
+    }
   }
+
   registerOnChange(fn: (val: T | null)=>T): void {
     this.control?.valueChanges.pipe(
       takeUntil(this._destroy$),

@@ -24,4 +24,12 @@ export class PokemonService {
     return this.httpClient.delete(this.urlBase + '/' + id);
   }
 
+  getPokemonById(id:string){
+    return this.httpClient.get(this.urlBase + '/' + id);
+  }
+
+  updatePokemonById(id:string, body:Pokemon){
+    return this.httpClient.put(this.urlBase + '/' + id, body);
+  }
+
 }

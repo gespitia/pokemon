@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ControlValueAccessorDirective } from './directives/control-value-accessor.directive';
 import { SliderCompnent } from './components/slider/slider.component';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { ModalComponent } from './components/modal/modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
     ControlValueAccessorDirective,
     SliderCompnent,
     SnackbarComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,6 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

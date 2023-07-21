@@ -16,7 +16,7 @@
         <td>{{ pokemon.ataque }}</td>
         <td>{{ pokemon.defensa }}</td>
         <td class="action-cell">
-          <button class="action-button edit-button">
+          <button class="action-button edit-button" (click)="openModal(pokemon)">
             <i class="fas fa-pencil-alt"></i>
           </button>
           <button (click)="deletePokemon( pokemon.id )" class="action-button delete-button">
@@ -26,5 +26,8 @@
       </tr>
     </tbody>
   </table>
+  <app-modal>
+    <app-create-form [title]="'Editar Pokemon'" ></app-create-form>
+  </app-modal>
   <app-snackbar [message]="message" #snackbar></app-snackbar>
 </div>
