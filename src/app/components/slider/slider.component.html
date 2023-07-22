@@ -1,5 +1,5 @@
 <div class="container-range" *ngIf="control">
   <div>
-    <h2 class="label">{{ field }}:&nbsp;0</h2>&nbsp;&nbsp;&nbsp;<input [formControl]="control" type="range" min="0" max="100"/>&nbsp;&nbsp;<h2 class="label">100</h2>
+    <h2 class="label">{{ field }}:&nbsp;0</h2>&nbsp;&nbsp;&nbsp;<input [formControl]="control" [name]="field" type="range" min="0" max="100"/>&nbsp;&nbsp;<h2 class="label">100</h2>
   </div>
 </div>

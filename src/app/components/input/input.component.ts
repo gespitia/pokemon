@@ -6,7 +6,7 @@ import { Component, Input, ViewEncapsulation} from '@angular/core';
   styleUrls: ['./input.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class InputComonent{
+export class InputComponent{
   @Input() valid!:Boolean;
   @Input() invalid!:Boolean;
 }

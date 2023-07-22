@@ -9,9 +9,9 @@ import { ControlValueAccessorDirective } from 'src/app/directives/control-value-
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => SliderCompnent),
+      useExisting: forwardRef(() => SliderComponent),
       multi: true,
     },
   ],
 })
-export class SliderCompnent<T> extends ControlValueAccessorDirective<T>{}
+export class SliderComponent<T> extends ControlValueAccessorDirective<T>{}

@@ -1,52 +1,88 @@
 {
-  "pokemons":[
+  "pokemons": [
     {
-      "nombre": "Pikachu",
-      "imagen": "https://pokefanaticos.com/galeria/pokemon/kanto/Pikachu.jp",
-      "ataque": 55,
+      "id": "avBlTcR",
+      "nombre": "Pidgey",
+      "imagen": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/016.png",
+      "ataque": 74,
+      "defensa": 100
+    },
+    {
+      "id": "iq0Vh1t",
+      "nombre": "Cindaquil",
+      "imagen": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/155.png",
+      "ataque": 48,
       "defensa": 40
     },
     {
-      "nombre": "Charizard",
-      "imagen": "https://pokefanaticos.com/galeria/pokemon/kanto/Charizard.jpg",
-      "ataque": 84,
-      "defensa": 78
+      "id": "RgilTAO",
+      "nombre": "Typhlosion",
+      "imagen": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/157.png",
+      "ataque": 75,
+      "defensa": 36
     },
     {
-      "nombre": "Bulbasaur",
-      "imagen": "https://pokefanaticos.com/galeria/pokemon/kanto/Bulbasaur.jpg",
-      "ataque": 49,
-      "defensa": 49
-    },
-    {
-      "nombre": "Squirtle",
-      "imagen": "https://pokefanaticos.com/galeria/pokemon/kanto/Squirtle.jpg",
-      "ataque": 48,
-      "defensa": 65
-    },
-    {
+      "id": "o_qeTkH",
       "nombre": "Pikachu",
-      "imagen": "https://pokefanaticos.com/galeria/pokemon/kanto/Pikachu.jp",
-      "ataque": 55,
-      "defensa": 40
+      "imagen": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png",
+      "ataque": 58,
+      "defensa": 29
     },
     {
-      "nombre": "Charizard",
-      "imagen": "https://pokefanaticos.com/galeria/pokemon/kanto/Charizard.jpg",
-      "ataque": 84,
-      "defensa": 78
+      "id": "EXQrPI9",
+      "nombre": "Ninetales",
+      "imagen": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/038.png",
+      "ataque": 70,
+      "defensa": 44
     },
     {
+      "id": "HfW19nv",
       "nombre": "Bulbasaur",
-      "imagen": "https://pokefanaticos.com/galeria/pokemon/kanto/Bulbasaur.jpg",
-      "ataque": 49,
-      "defensa": 49
+      "imagen": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
+      "ataque": 35,
+      "defensa": 23
     },
     {
-      "nombre": "Squirtle",
-      "imagen": "https://pokefanaticos.com/galeria/pokemon/kanto/Squirtle.jpg",
-      "ataque": 48,
+      "id": "U8tsyTQ",
+      "nombre": "Charizad",
+      "imagen": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png",
+      "ataque": 78,
+      "defensa": 41
+    },
+    {
+      "id": "sOARhFQ",
+      "nombre": "Mewtwo",
+      "imagen": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png",
+      "ataque": 100,
+      "defensa": 100
+    },
+    {
+      "id": "wxfNqre",
+      "nombre": "Pancham",
+      "imagen": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/674.png",
+      "ataque": 57,
+      "defensa": 34
+    },
+    {
+      "id": "huY1e8I",
+      "nombre": "Butterfree",
+      "imagen": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png",
+      "ataque": 28,
       "defensa": 65
+    },
+    {
+      "id": "8dPyARS",
+      "nombre": "Beedrill",
+      "imagen": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/015.png",
+      "ataque": 36,
+      "defensa": 25
+    },
+    {
+      "id": "nLThcDF",
+      "nombre": "Ampharos",
+      "imagen": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/181.png",
+      "ataque": 57,
+      "defensa": 37
     }
   ]
 }
